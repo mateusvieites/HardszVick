@@ -35,12 +35,29 @@
         }
         #homeBox img{
             border-radius: 50%;
-            border-color: red;  
+            border-color: black;  
             border-style: solid;
             border-width: 5px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+        #boxImgs{
+            border-radius: 2%;
+            border-color: black;  
+            border-style: solid;
+            border-width: 10px;
+            background-color: #FFFFFF;
+        }
+        body{
+            background-color: #6E6E6E;
+        }
+        #boxAboutMe{
+            border-radius: 2%;
+            border-color: black;  
+            border-style: solid;
+            border-width: 2px;
+            background-color: #FFFFFF;
         }
         
     </style>
@@ -105,24 +122,41 @@
         <div class="col d-flex flex-column h-sm-100" style='margin-left:0;margin-right:0;'>
         <section id="main-content">
         <section class="wrapper">
-            <div class="row">
-                
-                <div id='homeBox'>
+            <div id='homeBox' class="row">
                     <div class="col-lg-4" style="margin: 20px 0px;">
                         <a href="default.asp">
                             <img src="images/backgrounds/avatar.jpg" class="media-object  img-responsive" alt="Avatar" style="width:200px">
                         </a>
                     </div>
-                    <div class="col-lg-4">
-                        <p style="text-color:red">asss</p>
-                        <p>text</p>
+                    <div class="col-lg-8">
+                        <h1 style="text-align:justify;color:red;" >HardszVick</h1>
+                        <h2 style="text-align:justify;color:red;">Mateus Vieites de Jesus</h2>
                     </div>
                     
-                </div>
             </div>            
-            <div  class="col-lg-12" style='padding-left: 10%;padding-top:20px; padding-right:10%;'>   
+            <div  class="col-lg-12" style='padding-left: 10%;padding-top:20px; padding-right:10%;' >
+                <div id='boxAboutMe' style='background-color:white;padding-left:50px;padding-right:50px;'>
+                    <h1 style="text-align: justify;">About me:</h1>
+                    <p style="text-align: justify;">
+                        <?php
+                            date_default_timezone_set('America/Sao_Paulo');
+                            $myAge = date('Y')-1999;
+                            echo $myAge;
+    
+                        ?>
+                        Cillum mollit laborum ea anim duis dolor. Tempor consequat non do duis duis irure magna. Nulla nostrud adipisicing exercitation ad velit. Quis laboris tempor ea pariatur incididunt et deserunt magna eiusmod.
+                        sLorem nostrud amet velit minim Lorem qui labore qui eu. Enim irure cillum consequat qui occaecat dolore id. Lorem amet ad commodo dolor occaecat magna. Eiusmod dolor aliqua in quis officia irure. Sunt tempor officia ullamco aute et reprehenderit ut culpa et ut mollit minim. Est officia dolor cupidatat ex magna sit aliquip in commodo occaecat laborum nostrud velit. Reprehenderit non exercitation nisi in culpa eu ex sit quis est officia veniam officia.
+                        Pariatur eiusmod aute dolor magna consequat incididunt labore Lorem tempor eiusmod. Amet voluptate irure nisi qui ut excepteur culpa in anim ex ex sunt. Sunt consequat est sit dolore proident sint aute et ea. Nostrud dolor sunt proident occaecat exercitation laboris nulla labore quis est dolore. Veniam enim in nisi laborum ea.
+                        Cillum mollit laborum ea anim duis dolor. Tempor consequat non do duis duis irure magna. Nulla nostrud adipisicing exercitation ad velit. Quis laboris tempor ea pariatur incididunt et deserunt magna eiusmod.
+                        sLorem nostrud amet velit minim Lorem qui labore qui eu. Enim irure cillum consequat qui occaecat dolore id. Lorem amet ad commodo dolor occaecat magna. Eiusmod dolor aliqua in quis officia irure. Sunt tempor officia ullamco aute et reprehenderit ut culpa et ut mollit minim. Est officia dolor cupidatat ex magna sit aliquip in commodo occaecat laborum nostrud velit. Reprehenderit non exercitation nisi in culpa eu ex sit quis est officia veniam officia.
+                        Pariatur eiusmod aute dolor magna consequat incididunt labore Lorem tempor eiusmod. Amet voluptate irure nisi qui ut excepteur culpa in anim ex ex sunt. Sunt consequat est sit dolore proident sint aute et ea. Nostrud dolor sunt proident occaecat exercitation laboris nulla labore quis est dolore. Veniam enim in nisi laborum ea.
+                    </p>
+                </div>
+            </div>
             
-                <div id='boxImgs' class="row border border-dark rounded"> 
+            <hr>
+            <div  class="col-lg-12" style='padding-left: 10%;padding-top:20px; padding-right:10%;'>   
+                <div id='boxImgs' class="row "> 
                 <h1>Images</h1>
                 <?php 
                         $path   = "images/ProgramingLanguages/";
@@ -132,8 +166,9 @@
                             if (($arquivo != ".") and ($arquivo != "..")){
                                 $nameAndType = explode('.',$arquivo);
                                 $name = $nameAndType[0];
-                                    echo "<div class='border border-dark rounded col-lg-4' style='margin-top:2px; margin-right:2px'><img class='mw-100 mh-100 col-lg-12' style='padding-top:10px;'  src='$path$arquivo'  alt='$name' title='$name' ><p>$name</p></div>";
-                            }
+                                    // echo "<div class='border border-dark rounded col-lg-4' style='margin-top:2px; margin-right:2px'><img class='mw-100 mh-100 col-lg-12' style='padding-top:10px;'  src='$path$arquivo'  alt='$name' title='$name' ><p>$name</p></div>";
+                                    echo "<div class='border border-dark rounded col-lg-4'><img class='mw-100 mh-100 col-lg-12' style='padding-top:10px;'  src='$path$arquivo'  alt='$name' title='$name' ><p>$name</p></div>";
+                                }
                         }
                     ?>
                 </div>
