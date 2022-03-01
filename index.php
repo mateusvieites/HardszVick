@@ -125,11 +125,11 @@
         <section class="wrapper">
             <div id='homeBox' class="row">
                     <div class="col-lg-4" style="margin: 20px 0px;">
-                        <a href="default.asp">
+                        <a href="https://github.com/mateusvieites">
                             <img src="images/backgrounds/avatar.jpg" class="media-object  img-responsive" alt="Avatar" style="width:200px">
                         </a>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8" style='margin-top:20px;'>
                         <h1 style="text-align:justify;color:red;" >HardszVick</h1>
                         <h2 style="text-align:justify;color:red;">Mateus Vieites de Jesus</h2>
                     </div>
