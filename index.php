@@ -50,7 +50,8 @@
             background-color: #FFFFFF;
         }
         body{
-            background-color: #6E6E6E;
+            /* background-color: rgb(51, 51, 51); */
+            background-color: #ffffff;
         }
         #boxAboutMe{
             border-radius: 2%;
@@ -154,7 +155,7 @@
                 </div>
             </div>
             
-            <hr>
+            <hr size="7">
             <div  class="col-lg-12" style='padding-left: 10%;padding-top:20px; padding-right:10%;'>   
                 <div id='boxImgs' class="row "> 
                 <h1>Images</h1>
@@ -172,11 +173,9 @@
                         }
                     ?>
                 </div>
-            </div
-            <br>
-            <hr>
-             <footer id='footer' class='row' style='padding-left:10px;padding-right:10px'>
-                <div class='col-lg-12' style='padding-left:20%;padding-right:20%'>
+            </div>
+             <footer id='footer' class='row' style='background-color:#111;padding-left:10px;padding-right:10px;color:white;margin-top:20px;'>
+                <div class='col-lg-12' style='padding-left:20%;padding-right:20%;padding-top:20px;'>
                     <blockquote class="blockquote">
                         <p style='text-align: justify;'>
                             We can only see a short distance ahead, but we can see plenty there that needs to be done.
