@@ -10,12 +10,30 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> 
     <title>HardszVick</title>
 
     <style>
         /* @media (min-width: 1000px)
         (max-width: 1000px) */
+        
+        h1,h2{
+            font-family: 'Pacifico', cursive;
+            font-family: 'Permanent Marker', cursive;
+            
+        }
+        #homeBox div h1,h2{
+            color: aqua;
+            text-shadow: 
+               -1px -1px 0px black, 
+               -1px 1px 0px black,                    
+                1px -1px 0px black,                  
+                1px 0px 0px black;
+        }
         .row div img{
             display: block;
             margin-left: auto;
@@ -130,8 +148,8 @@
                         </a>
                     </div>
                     <div class="col-lg-8" style='margin-top:20px;'>
-                        <h1 style="text-align:justify;color:red;" >HardszVick</h1>
-                        <h2 style="text-align:justify;color:red;">Mateus Vieites de Jesus</h2>
+                        <h1 style="text-align:justify;" >HardszVick</h1>
+                        <h2 style="text-align:justify;">Mateus Vieites de Jesus</h2>
                     </div>
                     
             </div>            
@@ -142,15 +160,11 @@
                         <?php
                             date_default_timezone_set('America/Sao_Paulo');
                             $myAge = date('Y')-1999;
-                            echo $myAge;
-    
+                            echo "Hi guys, i'm Mateus(HardszVick) and i'm $myAge. I've been working with software development since 2021. 
+                            In 2012 I started developing plugins and mods for Minecraft just for fun.. I consider myself a shy person and
+                            it takes me a little longer to make friends."; 
+                    
                         ?>
-                        Cillum mollit laborum ea anim duis dolor. Tempor consequat non do duis duis irure magna. Nulla nostrud adipisicing exercitation ad velit. Quis laboris tempor ea pariatur incididunt et deserunt magna eiusmod.
-                        sLorem nostrud amet velit minim Lorem qui labore qui eu. Enim irure cillum consequat qui occaecat dolore id. Lorem amet ad commodo dolor occaecat magna. Eiusmod dolor aliqua in quis officia irure. Sunt tempor officia ullamco aute et reprehenderit ut culpa et ut mollit minim. Est officia dolor cupidatat ex magna sit aliquip in commodo occaecat laborum nostrud velit. Reprehenderit non exercitation nisi in culpa eu ex sit quis est officia veniam officia.
-                        Pariatur eiusmod aute dolor magna consequat incididunt labore Lorem tempor eiusmod. Amet voluptate irure nisi qui ut excepteur culpa in anim ex ex sunt. Sunt consequat est sit dolore proident sint aute et ea. Nostrud dolor sunt proident occaecat exercitation laboris nulla labore quis est dolore. Veniam enim in nisi laborum ea.
-                        Cillum mollit laborum ea anim duis dolor. Tempor consequat non do duis duis irure magna. Nulla nostrud adipisicing exercitation ad velit. Quis laboris tempor ea pariatur incididunt et deserunt magna eiusmod.
-                        sLorem nostrud amet velit minim Lorem qui labore qui eu. Enim irure cillum consequat qui occaecat dolore id. Lorem amet ad commodo dolor occaecat magna. Eiusmod dolor aliqua in quis officia irure. Sunt tempor officia ullamco aute et reprehenderit ut culpa et ut mollit minim. Est officia dolor cupidatat ex magna sit aliquip in commodo occaecat laborum nostrud velit. Reprehenderit non exercitation nisi in culpa eu ex sit quis est officia veniam officia.
-                        Pariatur eiusmod aute dolor magna consequat incididunt labore Lorem tempor eiusmod. Amet voluptate irure nisi qui ut excepteur culpa in anim ex ex sunt. Sunt consequat est sit dolore proident sint aute et ea. Nostrud dolor sunt proident occaecat exercitation laboris nulla labore quis est dolore. Veniam enim in nisi laborum ea.
                     </p>
                 </div>
             </div>
@@ -183,7 +197,13 @@
                         <footer class="blockquote-footer"><cite title="Alan Mathison Turing">Alan Mathison Turing</cite></footer>
                     </blockquote>
                 </div>
-                <div class='col-lg-6 col offset-lg-6' style='padding-left:20%;' align="right">
+                <div class='col-lg-4'>
+                    <label for="username">Your beautiful name :)</label><br>
+                    <input class='col-lg-12' type="text" id="username" name="username"><br>
+                    <label for="Message">Your message:</label><br>
+                    <textarea class='col-lg-12'></textarea><br>
+                </div>
+                <div class='col-lg-6 col offset-lg-2' style='padding-left:20%;' align="right">
                     <p style='text-align: justify;'>
                         Contact: <a href="mailto:hardszvick25@gmail.com">
 						hardszvick25@gmail.com</a>
