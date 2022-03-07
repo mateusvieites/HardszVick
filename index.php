@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/default.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/functions.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>HardszVick</title>
+    
 
     <style>
         /* @media (min-width: 1000px)
@@ -151,7 +154,8 @@
                     </li>
                 </ul>
                 
-                <!-- <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                <!-- se precisar de uma lista bunitinha no canto  
+                    <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="hugenerd" width="28" height="28" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1">Joe</span>
@@ -228,20 +232,23 @@
                     </blockquote>
                 </div>
                 <div class='col-lg-4'>
-                    <div class='col-lg-12'>
-                    <label for="username">Your beautiful name :)</label><br>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"><br>
-                    <label for="Message">Your message:</label><br>
-                    <textarea class="form-control col-lg-12" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+                    <div class='row'>
+                        <div class='col-lg-12'>
+                            <label for="email">Your beautiful email :)</label><br>
+                            <input id="teste" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
+                            <label id="errorMessageEmail" style="color:red;">abcdef</label><br>
+                            <label for="Message">Your message:</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class='col-lg-6 col offset-lg-2' style='padding-left:20%;' align="right">
                     <p style='text-align: justify;'>
                         Contact: <a href="mailto:hardszvick25@gmail.com">
-						hardszvick25@gmail.com</a>
-                        <br>
-                        Celular: (48) 99102-9824
-					</a>
+                            hardszvick25@gmail.com</a>
+                            <br>
+                            Celular: (48) 99102-9824
+					    </a>
                     </p>
                 </div>
             </footer>
@@ -250,13 +257,55 @@
         </div>
     </div>
 </div>
-<script>
+
+<!-- Functions here -->
+
+
+<!-- Jquery Events here  -->
+    <script>
          document.getElementById('btnSubmit').addEventListener("click", function () {
             $("#exampleModal").modal({
                 show: true
             });
-        });
+         });
+        // document.getElementByID('teste').addEventListener("change",function(){
+        //     $('input[name=myInput]').change(function() {
+        // });
+        
+        function verifyEmail(){
+            var text = $('#teste').val();
+            if ((text != null) && (text !="")) {
+                var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+                if ($('#errorMessageEmail').is( "li" )){
+                    alert('é uma li')
+                }else{
+                    alert('não é uma li porem');
+                    if($('#errorMessageEmail').is('label')){
+                        alert('é uma label');
+                    }
+                }
+
+                if (text.match(validRegex)) {
+                    Function:changeTextColor($('#errorMessageEmail'),"#99cc33");
+                    // Function:changeHTML($('#errorMessageEmail'),"E-mail validado com sucesso"));
+                }else{
+                    Function:changeTextColor($('#errorMessageEmail'),"#cc3300");
+                    
+                    // Function:changeHTML($('#errorMessageEmail'),"E-mail invalidado com sucesso"));
+                }
+            }
+        } 
+
+        $('#teste').focusout(verifyEmail);
+
+
+        
+        // addEventListener('change', (event) => {
+        //     result.textContent = `You like ${event.target.value}`;
+        // }   );
+        // $('#email').change(function() {alert('teste') });
          
     </script>
 </body>
+</html>
