@@ -109,6 +109,8 @@
   Launch demo modal
 </button>
 
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -287,7 +289,7 @@
                     $('#errorMessageEmail').text("E-mail validado com sucesso");
                 }else{
                     Function:changeTextColor($('#errorMessageEmail'),"#cc3300");
-                    $('#errorMessageEmail').text("E-mail validado com sucesso");
+                    $('#errorMessageEmail').text("E-mail invalido");
                     
                 }
             }
