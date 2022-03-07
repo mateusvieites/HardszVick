@@ -231,17 +231,20 @@
                         <footer class="blockquote-footer"><cite title="Alan Mathison Turing">Alan Mathison Turing</cite></footer>
                     </blockquote>
                 </div>
+                <hr/>
                 <div class='col-lg-4'>
                     <div class='row'>
                         <div class='col-lg-12'>
                             <label for="email">Your beautiful email :)</label><br>
-                            <input id="teste" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
-                            <label id="errorMessageEmail" style="color:red;">abcdef</label><br>
+                            <input id="teste" required type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
+                            <label id="errorMessageEmail" style="color:red;"></label><br>
                             <label for="Message">Your message:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea required class="form-control col-lg-12" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                <button class="btn btn-primary btn-block" style="margin-top:5px"  >Send</button>
                         </div>
                     </div>
                 </div>
+
                 <div class='col-lg-6 col offset-lg-2' style='padding-left:20%;' align="right">
                     <p style='text-align: justify;'>
                         Contact: <a href="mailto:hardszvick25@gmail.com">
@@ -277,29 +280,22 @@
             if ((text != null) && (text !="")) {
                 var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-                if ($('#errorMessageEmail').is( "li" )){
-                    alert('é uma li')
-                }else{
-                    alert('não é uma li porem');
-                    if($('#errorMessageEmail').is('label')){
-                        alert('é uma label');
-                    }
-                }
+                
 
                 if (text.match(validRegex)) {
                     Function:changeTextColor($('#errorMessageEmail'),"#99cc33");
-                    // Function:changeHTML($('#errorMessageEmail'),"E-mail validado com sucesso"));
+                    $('#errorMessageEmail').text("E-mail validado com sucesso");
                 }else{
                     Function:changeTextColor($('#errorMessageEmail'),"#cc3300");
+                    $('#errorMessageEmail').text("E-mail validado com sucesso");
                     
-                    // Function:changeHTML($('#errorMessageEmail'),"E-mail invalidado com sucesso"));
                 }
             }
         } 
 
         $('#teste').focusout(verifyEmail);
 
-
+        
         
         // addEventListener('change', (event) => {
         //     result.textContent = `You like ${event.target.value}`;

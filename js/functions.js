@@ -5,7 +5,8 @@ function changeTextColor(element,color){
     }
 }
 
-function changeHTML(element,text){
-    element.text(text);
-}
+// function changeHTML(element,text){
+//     element.text("text");
+//     $(element).text('eoq');
+// }
 
