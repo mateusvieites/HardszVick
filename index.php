@@ -24,6 +24,28 @@
     <title>HardszVick</title>
     
 
+    <script>
+        function test(email,text){
+            if (verifyEmail()){
+                $.ajax({
+                    type: "POST",
+                    url: 'php/processEmail.php',
+                    data: {'email':email,'text':text},
+                    dataType: 'json',
+                    success: function(data){
+                        openModal("Email","teste");
+                    },
+                    error: function(xhr, status, error){
+                        openModal("Email","teste");
+                    }
+                })
+                
+            }else{
+                    openModal("Error","Please put a valid e-mail");
+                }
+        };
+    </script>
+
     <style>
         /* @media (min-width: 1000px)
         (max-width: 1000px) */
@@ -104,8 +126,8 @@
     ?>
 </head>
 <body>
-<!-- Button trigger modal -->
-<button type="button" id="btnSubmit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">
+<!-- Button trigger modal
+<button type="button" id="btnSubmit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal"> -->
   Launch demo modal
 </button>
 
@@ -116,17 +138,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="ModalTitle">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+       <p id="ModalText"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
@@ -196,9 +218,11 @@
                         <?php
                             date_default_timezone_set('America/Sao_Paulo');
                             $myAge = date('Y')-1999;
-                            echo "Hi guys, i'm Mateus(HardszVick) and i'm $myAge. I've been working with software development since 2021. 
-                            In 2012 I started developing plugins and mods for Minecraft just for fun.. I consider myself a shy person and
-                            it takes me a little longer to make friends."; 
+                            echo "Consequat eiusmod voluptate veniam quis minim aliquip sit.Eiusmod et ullamco esse ea laboris esse officia laborum. In et et mollit qui id ipsum enim ad consequat duis cupidatat. Enim labore aute exercitation aliqua sunt qui ullamco adipisicing culpa esse amet eiusmod aliquip duis. Aliqua nostrud ex excepteur nostrud non. Duis tempor cillum enim proident sunt dolor dolor dolor. Commodo tempor adipisicing mollit proident sunt in ut aute. Duis commodo dolore velit duis reprehenderit proident commodo aute.
+
+Proident ex et laborum sunt et in voluptate sint commodo. Velit et quis Lorem ipsum deserunt consectetur nisi laboris est aliquip elit mollit anim. Aliquip mollit tempor cupidatat in laborum sunt. Culpa ullamco consequat amet tempor proident mollit aliquip duis amet ut nostrud aliqua aliquip. Cillum elit ut enim officia laborum. Dolor consequat est amet do aute in exercitation pariatur nulla non nisi non deserunt.
+
+Cupidatat mollit occaecat nulla commodo culpa exercitation. Elit amet consectetur reprehenderit deserunt eu aute qui. Sit aute qui irure enim nostrud non nulla duis incididunt culpa. Aliqua eu enim enim mollit irure elit commodo veniam culpa. Reprehenderit tempor deserunt exercitation aliqua laborum qui excepteur occaecat et commodo incididunt labore. Cupidatat officia qui enim duis labore labore cillum occaecat anim adipisicing culpa ea eu amet."; 
                     
                         ?>
                     </p>
@@ -236,13 +260,14 @@
                 <hr/>
                 <div class='col-lg-4'>
                     <div class='row'>
+
                         <div class='col-lg-12'>
-                            <label for="email">Your beautiful email :)</label><br>
+                            <label for="email">A beautiful mail :)</label><br>
                             <input id="teste" required type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
                             <label id="errorMessageEmail" style="color:red;"></label><br>
                             <label for="Message">Your message:</label>
                             <textarea required class="form-control col-lg-12" id="exampleFormControlTextarea1" rows="5"></textarea>
-                                <button class="btn btn-primary btn-block" style="margin-top:5px"  >Send</button>
+                                <button class="btn btn-primary btn-block" style="margin-top:5px"  onclick="test('coelho','dapascoa');">Send</button>
                         </div>
                     </div>
                 </div>
@@ -250,9 +275,7 @@
                 <div class='col-lg-6 col offset-lg-2' style='padding-left:20%;' align="right">
                     <p style='text-align: justify;'>
                         Contact: <a href="mailto:hardszvick25@gmail.com">
-                            hardszvick25@gmail.com</a>
-                            <br>
-                            Celular: (48) 99102-9824
+                            contact@hardszvick.com</a>
 					    </a>
                     </p>
                 </div>
@@ -268,11 +291,20 @@
 
 <!-- Jquery Events here  -->
     <script>
-         document.getElementById('btnSubmit').addEventListener("click", function () {
+        //  document.getElementById('btnSubmit').addEventListener("click", function () {
+        //     $("#exampleModal").modal({
+        //         show: true
+        //     });
+        //  });
+
+         function openModal(title,body){
+            $("#ModalTitle").text(title);
+            $("#ModalText").text(body);
+            
             $("#exampleModal").modal({
                 show: true
             });
-         });
+         }
         // document.getElementByID('teste').addEventListener("change",function(){
         //     $('input[name=myInput]').change(function() {
         // });
@@ -287,10 +319,11 @@
                 if (text.match(validRegex)) {
                     Function:changeTextColor($('#errorMessageEmail'),"#99cc33");
                     $('#errorMessageEmail').text("E-mail validado com sucesso");
+                    return true;
                 }else{
                     Function:changeTextColor($('#errorMessageEmail'),"#cc3300");
                     $('#errorMessageEmail').text("E-mail invalido");
-                    
+                    return false;
                 }
             }
         } 
